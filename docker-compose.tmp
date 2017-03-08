@@ -18,7 +18,7 @@ services:
       - LABELS=slave
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.2m:/root/.2m
+      - /root/.m2:/root/.m2
     depends_on:
       - jenkins
     networks:
