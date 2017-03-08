@@ -7,9 +7,9 @@ services:
   jenkins-slave:
     image: registry.aliyuncs.com/hydsoft/ddc-jenkins-slave:latest
     environment:
-      - UCP_SERVERS=10.0.0.4
-      - UCP_USER=admin
-      - UCP_PASSWORD=1qaz@WSX
+      - UCP_SERVERS=
+      - UCP_USER=
+      - UCP_PASSWORD=
       - NODE_NAME=agent
       - JENKINS_URL=http://jenkins:8080
       - JENKINS_USER=
