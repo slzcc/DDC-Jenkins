@@ -11,10 +11,20 @@ services:
       - UCP_USER=
       - UCP_PASSWORD=
       - NODE_NAME=agent
-      - JENKINS_URL=http://jenkins:8080/
+      - JENKINS_URL=http://jenkins:8080
       - JENKINS_USER=
       - JENKINS_PASSWORD=
-      - EXECUTORS=
-      - LABELS=
+      - EXECUTORS=2
+      - LABELS=slave
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.2m:/root/.2m
     depends_on:
       - jenkins
+    networks:
+      - jenkins-ci
+
+networks:
+  jenkins-ci:
+    driver: overlay
+~
