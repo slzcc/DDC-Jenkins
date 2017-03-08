@@ -3,7 +3,7 @@ services:
   jenkins:
     image: registry.aliyuncs.com/hydsoft/ddc-jenkins-server:latest
     ports:
-      - "8090:8080"
+      - "8080:8080"
     networks:
       - jenkins-ci
   jenkins-slave:
