@@ -1,6 +1,6 @@
 # Docker Swarm Start the way , Can not to Build.
 
-IMAGE = slzcc/jenkins-swarm-slave
+IMAGE = registry.aliyuncs.com/hydsoft/ddc-jenkins-slave:latest
 
 Swarm_start:
 	@docker stack deploy -c docker-compose.yml ddc_demo
@@ -11,8 +11,8 @@ Compose_start:
 Compose_build:
 	@docker-compose -f docker-compose.tml build
 
-Docker_Build:
-	@docker build --rm --build-arg ORACLE_JDK_VERSION=8u121 --build-arg ORACLE_JDK_BUILD_NUMBER=b13 -t $(IMAGE) image/jenkins-swarm-slave
+Jenkins_Slave_Build:
+	@docker build --rm --build-arg ORACLE_JDK_VERSION=8u121 --build-arg ORACLE_JDK_BUILD_NUMBER=b13 -t $(IMAGE) image/ddc-jenkins-server
 
 Docker_Push:
 	@docker push $(IMAGE)
