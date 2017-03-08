@@ -22,4 +22,3 @@ if [[ -z ${EXECUTORS} ]]
 fi
 
 java ${JAVA_OPTS} -jar /opt/jenkins/slave.jar -master ${JENKINS_URL} -name ${NODE_NAME} -labels "${LABELS}" -executors ${EXECUTORS} -username ${JENKINS_USER} -password ${JENKINS_PASSWORD}
-#java ${JAVA_OPTS} -jar /opt/jenkins/slave.jar -master ${JENKINS_URL} -name ${NODE_NAME} -labels "${LABELS}" -executors ${EXECUTORS}
