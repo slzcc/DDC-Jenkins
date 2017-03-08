@@ -1,0 +1,20 @@
+version: "3"
+services:
+  jenkins:
+    build: ./image/ddc-jenkins-sever
+    ports:
+      - "8089:8080"
+  jenkins-slave:
+    build: ./image/ddc-jenkins-slave
+    environment:
+      - UCP_SERVERS=10.0.0.4
+      - UCP_USER=admin
+      - UCP_PASSWORD=1qaz@WSX
+      - NODE_NAME=agent
+      - JENKINS_URL=http://jenkins:8080/
+      - JENKINS_USER=
+      - JENKINS_PASSWORD=
+      - EXECUTORS=
+      - LABELS=
+    depends_on:
+      - jenkins
